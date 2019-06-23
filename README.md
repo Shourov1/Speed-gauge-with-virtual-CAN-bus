@@ -67,8 +67,8 @@ canplayer -I candump-2015-03-20_123001.log
 
 ## Acknowledgments
 
-*[Marko Mattila](https://github.com/zchydem) - for providing the Gauge design using QML.
+* [Marko Mattila](https://github.com/zchydem) - for providing the Gauge design using QML.
 
-*[Ryan Fabac](https://github.com/rmfabac) - for providing the CAN bus functionality test examples.
+* [Ryan Fabac](https://github.com/rmfabac) - for providing the CAN bus functionality test examples.
 
 
