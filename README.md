@@ -50,7 +50,7 @@ The resulting file will be named like: candump-2019-06-23_123001.log
 ```bash
 log2asc -I candump-2015-03-20_123001.log vcan0
 ```
-### In order to print logfiles in a user friendly format:
+### Recorded CAN log files can also be re-played back to the same or another CAN interface:
 
 ```bash
 canplayer -I candump-2015-03-20_123001.log
