@@ -1,5 +1,7 @@
 # Speed Gauge With Virtual CAN Bus
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 The purpose of this application is to show (simulated) vehicle speed in a gauge developed with [Qt5/ QML](https://doc.qt.io/qt-5/qtqml-index.html).
 
 The application can communicate with a [virtual CAN bus](https://en.wikipedia.org/wiki/SocketCAN), from which the application is receiving simulated vehicle speed data. The application then shows the vehicle speed in a gauge. The UI is developed with [QML](https://en.wikipedia.org/wiki/QML). 
