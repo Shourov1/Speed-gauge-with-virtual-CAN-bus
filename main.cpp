@@ -49,17 +49,12 @@ int decodeFrame(const QCanBusFrame &frame)
 
 void checkFrames()
 {
-    qDebug() << 1;
+   
     // Read frames.
     while(device->framesAvailable() > 0)
     {
-        object->setProperty("filtering", "Yes");
-        object->setProperty("frames", device->framesAvailable());
 
         QCanBusFrame frame = device->readFrame();
-
-        object->setProperty("canId", frame.frameId());
-        object->setProperty("payload", frame.payload().data());
 
         if(frame.isValid())
         {
@@ -102,7 +97,7 @@ void sendCan ()
         val_4 = 0;
         send = "cansend vcan0 316#1122330000667788";
     }
-    else if (val < 17) {
+    else if (val < 16) {
         val_3 = val;
         val_4 = 0;
         send = "cansend vcan0 316#1122330" + QString::number(val_3,16).toStdString() + "00667788";
@@ -115,7 +110,7 @@ void sendCan ()
     else{
         val_3 = 127;
         val_4 = 255 - val;
-        if (val_4 < 17){
+        if (val_4 < 16){
             send = "cansend vcan0 316#112233" + QString::number(val_3,16).toStdString() + "0" + QString::number(val_4,16).toStdString() + "667788";
         }
         else {
@@ -147,7 +142,6 @@ int main(int argc, char *argv[])
 
     if(QCanBus::instance()->plugins().contains("socketcan"))
     {
-        object->setProperty("socket", "Yes");
 
         // Create CAN bus device and connect to can0 via SocketCAN plugin.
         device = QCanBus::instance()->createDevice("socketcan", "vcan0");
